@@ -73,13 +73,6 @@ Forward: 942.34s
 [Detroit x2]    PSNR: 41.345 (Best: 41.345 @epoch 1)  
 Forward: 229.33s  
 
-## Results
-### Quantitative Results
-![Quantitative Results](/Figs/Table.png)
-
-### Visual Results
-![Visual_Results](/Figs/Fig1.png)
-
 
 ## Citation
 If you find the code helpful in your resarch or work, please cite the following papers.
