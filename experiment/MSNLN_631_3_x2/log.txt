@@ -1,0 +1,124 @@
+CSNLN(
+  (sub_mean): MeanShift(3, 3, kernel_size=(1, 1), stride=(1, 1))
+  (SEM): RecurrentProjection(
+    (multi_source_projection): MultisourceProjection(
+      (up_attention1): NonLocalAttention(
+        (conv_match1): BasicBlock(
+          (0): Conv2d(128, 64, kernel_size=(1, 1), stride=(1, 1))
+          (1): PReLU(num_parameters=1)
+        )
+        (conv_match2): BasicBlock(
+          (0): Conv2d(128, 64, kernel_size=(1, 1), stride=(1, 1))
+          (1): PReLU(num_parameters=1)
+        )
+        (conv_assembly): BasicBlock(
+          (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1))
+          (1): PReLU(num_parameters=1)
+        )
+      )
+      (up_attention2): NonLocalAttention(
+        (conv_match1): BasicBlock(
+          (0): Conv2d(128, 64, kernel_size=(1, 1), stride=(1, 1))
+          (1): PReLU(num_parameters=1)
+        )
+        (conv_match2): BasicBlock(
+          (0): Conv2d(128, 64, kernel_size=(1, 1), stride=(1, 1))
+          (1): PReLU(num_parameters=1)
+        )
+        (conv_assembly): BasicBlock(
+          (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1))
+          (1): PReLU(num_parameters=1)
+        )
+      )
+      (down_attention): NonLocalAttention(
+        (conv_match1): BasicBlock(
+          (0): Conv2d(128, 64, kernel_size=(1, 1), stride=(1, 1))
+          (1): PReLU(num_parameters=1)
+        )
+        (conv_match2): BasicBlock(
+          (0): Conv2d(128, 64, kernel_size=(1, 1), stride=(1, 1))
+          (1): PReLU(num_parameters=1)
+        )
+        (conv_assembly): BasicBlock(
+          (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1))
+          (1): PReLU(num_parameters=1)
+        )
+      )
+      (upsample): Sequential(
+        (0): ConvTranspose2d(128, 128, kernel_size=(6, 6), stride=(2, 2), padding=(2, 2))
+        (1): PReLU(num_parameters=1)
+      )
+      (encoder1): ResBlock(
+        (body): Sequential(
+          (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PReLU(num_parameters=1)
+          (2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        )
+      )
+      (encoder2): ResBlock(
+        (body): Sequential(
+          (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PReLU(num_parameters=1)
+          (2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        )
+      )
+      (encoder3): ResBlock(
+        (body): Sequential(
+          (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          (1): PReLU(num_parameters=1)
+          (2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        )
+      )
+    )
+    (down_sample_1): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(6, 6), stride=(2, 2), padding=(2, 2))
+      (1): PReLU(num_parameters=1)
+    )
+    (down_sample_2): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(6, 6), stride=(2, 2), padding=(2, 2))
+      (1): PReLU(num_parameters=1)
+    )
+    (error_encode): Sequential(
+      (0): ConvTranspose2d(128, 128, kernel_size=(6, 6), stride=(2, 2), padding=(2, 2))
+      (1): PReLU(num_parameters=1)
+    )
+    (post_conv): BasicBlock(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): PReLU(num_parameters=1)
+    )
+  )
+  (add_mean): MeanShift(3, 3, kernel_size=(1, 1), stride=(1, 1))
+  (head): Sequential(
+    (0): BasicBlock(
+      (0): Conv2d(3, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): PReLU(num_parameters=1)
+    )
+    (1): BasicBlock(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): PReLU(num_parameters=1)
+    )
+  )
+  (tail): Sequential(
+    (0): Conv2d(1536, 3, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+)
+[Epoch 1]	Learning rate: 1.00e-4
+[400/4000]	[L1: 0.1102]	74.3+37.4s
+[800/4000]	[L1: 0.0860]	74.2+23.4s
+[1200/4000]	[L1: 0.0746]	74.5+15.5s
+[1600/4000]	[L1: 0.0664]	74.5+11.0s
+[2000/4000]	[L1: 0.0610]	74.5+7.5s
+[2400/4000]	[L1: 0.0561]	74.6+4.2s
+[2800/4000]	[L1: 0.0529]	74.6+4.1s
+[3200/4000]	[L1: 0.0502]	74.7+3.1s
+[3600/4000]	[L1: 0.0479]	75.1+3.4s
+[4000/4000]	[L1: 0.0460]	75.1+3.2s
+
+Evaluation:
+[Set5 x2]	PSNR: 32.887 (Best: 32.887 @epoch 1)
+Forward: 46.76s
+
+Saving...
+Total: 47.18s
+
+[Epoch 2]	Learning rate: 1.00e-4
