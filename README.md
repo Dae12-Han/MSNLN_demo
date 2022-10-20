@@ -1,6 +1,5 @@
 # Multi-Scale Non-Local Attention Network
-This repository is for MSNLN introduced in the following paper ...  
-Sowon Kim, Hanhoon Park*, "Super-Resolution Using Multi-Scale Non-Local Attention", 2022  
+This repository is for MSNLN  demo introduced in the following repository [MSNLN](https://github.com/Dae12-Han/MSNLN)
 The code is built on [EDSR (PyTorch)](https://github.com/thstkdgus35/EDSR-PyTorch) and [CSNLN](https://github.com/SHI-Labs/Cross-Scale-Non-Local-Attention), tested on window 10 environment (Python3.6.5, PyTorch_1.7.1) with GeForce RTX 2080 Ti GPU. 
 
 ## Contents
