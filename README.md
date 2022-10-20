@@ -36,15 +36,6 @@ Code is based on EDSR and CSNLN. For more information, please refer to [EDSR(PyT
     ```
 
 ## Test
-### Quick start
-Pre-traind models can be downloaded from ...
-
-    ```
-    # No self-ensemble: MSNLN
-    # Example X2 SR
-    python3 main.py --model MSNLN_631_3 --data_test Set5+Set14+B100+Urban100 --data_range 801-900 --scale 2 --n_feats 128 --depth 12 --pre_train ./experiment/MSNLN_631_3_x2/model/model_best.pt --save_results --test_only --chop
-    ```
-
 ### Demo
 Here we provide demo test samples. Since Set5 dataset is consisted of 5 images, we randomly extracted 10 images from B100, Detroit, Manga109. You can check that demo datasets PSNR average is over 37dB. 
 
@@ -60,24 +51,19 @@ Total params: 3.68M
   
 Evaluation:  
 100%|█████████████████████████████████████████████| 5/5 [00:47<00:00, 10.11s/it]  
-[Set5 x2]       PSNR: 37.248 (Best: 37.248 @epoch 1)  
+[Set5 x2]       PSNR: 37.248 
 Forward: 47.14s  
 100%|███████████████████████████████████████████| 10/10 [02:17<00:00, 13.71s/it]  
-[B100 x2]       PSNR: 35.923 (Best: 35.923 @epoch 1)  
+[B100 x2]       PSNR: 35.923 
 Forward: 137.43s  
 100%|███████████████████████████████████████████| 10/10 [15:42<00:00, 94.19s/it]  
-[Manga109 x2]   PSNR: 39.715 (Best: 39.715 @epoch 1)  
+[Manga109 x2]   PSNR: 39.715
 Forward: 942.34s   
 100%|███████████████████████████████████████████| 10/10 [03:49<00:00, 22.85s/it]  
-[Detroit x2]    PSNR: 41.345 (Best: 41.345 @epoch 1)  
+[Detroit x2]    PSNR: 41.345 
 Forward: 229.33s  
 
 
-## Citation
-If you find the code helpful in your resarch or work, please cite the following papers.
-```
-
-```
 ## Acknowledgements
 This code is built on [EDSR (PyTorch)](https://github.com/thstkdgus35/EDSR-PyTorch) and [CSNLN](https://github.com/SHI-Labs/Cross-Scale-Non-Local-Attention). We thank the authors for sharing their codes.
 
