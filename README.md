@@ -15,7 +15,7 @@ The code is built on [EDSR (PyTorch)](https://github.com/thstkdgus35/EDSR-PyTorc
 
 Since the deep learning-based methods were proposed, compared with traditional methods, they use large-scale external image priors for SISR. However, still most existing deep convoultion-based SISR works have ignored the long-range feature-wise similarities in natural images. Cross-Scale Non-Local Network (CSNLN) overcomes these problems by capturing recurring small patches in different scale and achieved considerable performance gain. Inspired by CSNLN, we proposed Multi-Scale Non-Local Netowrk (MSNLN). MSNLN adopts the benefits of CSNLN but unlike CSNLN, it is made to capture similarities within the same size of small patches. Experimental results demonstrate that proposed MSNLN shows superior performance over prior CSNLN by multiple SISR benchmarks.
 
-![MS-NL Attention](/Figs/Fig.png)
+![MS-NL Attention](Fig.png)
 
 The proposed MSNLN architecture. SEM structure in CSNLN, it fuses features learned from a Cross-Scale Non-Local (CS-NL) attention, with others from In-Scale Non-Local (IS-NL) and the local paths. SEM structure in MSNLN, it fuses features learned from a proposed Multi-Scale Non-Local (MS-NL) attention and the local paths.
 
